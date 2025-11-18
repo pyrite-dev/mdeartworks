@@ -1,0 +1,1 @@
+# Artwork package for MDE
