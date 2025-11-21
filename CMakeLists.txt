@@ -6,7 +6,7 @@ project(
 file(
 	GLOB
 	ICONS_SCALABLE
-	icons/scalable/*.png
+	icons/scalable/*.svg
 )
 file(
 	GLOB
