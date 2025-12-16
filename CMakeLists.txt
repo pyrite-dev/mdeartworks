@@ -33,6 +33,7 @@ file(
 	GLOB
 	WALLPAPERS
 	wallpapers/*.png
+	wallpapers/*.jpg
 )
 
 include(GNUInstallDirs)
