@@ -2,8 +2,11 @@
 cd icons/scalable
 for i in 128 64 32 16; do
 	echo "-- ${i}x${i}"
-	for j in *.svg; do
-		echo "$j"
-		rsvg-convert --height=$i -o ../${i}x${i}/`echo $j | cut -d. -f1`.png $j
+	for j in actions apps categories devices emblems emotes mimetypes places status; do
+		mkdir -p ../${i}x${i}/${j}
+	done
+	find . -name "*.svg" | while read a; do
+		echo "$a"
+		rsvg-convert --height=$i -o ../${i}x${i}/`echo $a | cut -d. -f2`.png $a
 	done
 done
