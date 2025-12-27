@@ -53,7 +53,7 @@ for i in $SIZES; do
 		mkdir -p ../${i}x${i}/${j}
 		echo $j > ../${i}x${i}/${j}/README.txt
 	done
-	if [ ! "$i" = "128" ]; then
+	if [ ! "$i" = "128" -a ! -f "../${i}x${i}/apps/mde.png" ]; then
 		convert ../128x128/apps/mde.png -scale x${i} ../${i}x${i}/apps/mde.png
 	fi
 	find . -name "*.svg" | while read a; do
