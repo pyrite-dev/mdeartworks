@@ -23,7 +23,7 @@ echo "" >> ../index.theme
 
 for i in scalable $SIZES; do
 	for j in $TYPES; do
-		echo "[$i/$j]" >> ../index.theme
+		echo "[${i}x${i}/$j]" >> ../index.theme
 
 		C="`echo $j | sed -E 's/^(.).*$/\1/' | tr "[:lower:]" "[:upper:]"``echo $j | sed -E 's/^.//'`"
 
