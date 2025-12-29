@@ -58,6 +58,10 @@ for i in $SIZES; do
 	fi
 	find . -name "*.svg" | while read a; do
 		echo "$a"
-		rsvg-convert --height=$i -o ../${i}x${i}/`echo $a | cut -d. -f2`.png $a
+		if [ "x`readlink "$a"`" = "x" ]; then
+			rsvg-convert --height=$i -o ../${i}x${i}/`echo $a | cut -d. -f2`.png $a
+		else
+			ln -sf `readlink "$a" | sed 's/\.svg$//'`.png ../${i}x${i}`echo $a | cut -d. -f2`.png
+		fi
 	done
 done
