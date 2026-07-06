@@ -15,3 +15,8 @@ install(
 		PATTERN "*.png"
 		PATTERN "*.jpg"
 )
+
+install(
+	DIRECTORY sounds/
+	DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/sounds/mde
+)
